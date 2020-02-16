@@ -15,13 +15,12 @@
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
+                
                 margin: 0;
             }
 
             .full-height {
-                height: 100vh;
+                
             }
 
             .flex-center {
@@ -81,19 +80,57 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Passport
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+<div class="links">
+                ----------------------------------------------<br>
+composer require laravel/passport<br>
+----------------------------------------------<br>
+php artisan migrate<br>
+----------------------------------------------<br>
+php artisan passport:install<br>
+----------------------------------------------<br>
+
+User -> Model<br>
+<br>
+use Laravel\Passport\HasApiTokens;<br>
+<br>
+     use HasApiTokens, Notifiable;<br>
+<br>
+----------------------------------------------<br>
+
+AuthServiceProvider -> Providers<br>
+<br>
+use Laravel\Passport\Passport;<br>
+    <br>
+    public function boot() -> Passport::routes();<br>
+        <br>
+----------------------------------------------<br>
+
+cinfig -> auth -> guards->api->driver=>passport<br>
+<br>
+----------------------------------------------<br>
+<br>
+php artisan make:controller AuthController<br>
+<br>
+[CODE] in AuthController<br>
+<br>
+----------------------------------------------<br>
+<br>
+php artisan make:controller UserController<br>
+<br>
+[CODE] in UserController<br>
+<br>
+----------------------------------------------<br>
+
+Acesso Auth => in Headers na requisiçao : Authorization -> Bearer token<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+            </div>
             </div>
         </div>
     </body>
