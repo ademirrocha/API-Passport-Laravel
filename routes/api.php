@@ -17,6 +17,7 @@ Route::POST('register', 'Api\Auth\AuthController@register');
 Route::POST('login', 'Api\Auth\AuthController@login');
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('user/{userId}/details', 'Api\User\UserController@show');
+    Route::get('user/{userId}/details', 'Api\User\UserController@get');
+    Route::get('user/all', 'Api\User\UserController@getAll');
     Route::get('user', 'Api\User\UserController@auth');
 });
