@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Entities\Users\ValidationUser;
 use App\Repositories\UserRepositoryInterface;
 use App\Exceptions\CustomValidationException;
+use Illuminate\Support\Facades\Hash;
 
 class UserServices
 {
@@ -34,10 +35,10 @@ class UserServices
         $validator = Validator::make($data, ValidationUser::RULE_USER);
 
         if ($validator->fails()) {
-            throw new CustomValidationException('Falha na validação dos dados', $validator->errors());
+            return $validator->errors();
         }
 
-        $data['password'] = bcrypt($data->password);
+       $data['password'] = Hash::make($data['password']);
         
         return $this->repository->store($data);
     }

@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::POST('register', 'Api\Auth\AuthController@register');
+Route::POST('register', 'Api\User\UserController@store');
 Route::POST('login', 'Api\Auth\AuthController@login');
+Route::get('users', 'Api\User\UserController@getAll');
 
 Route::middleware('auth:api')->group(function () {
     Route::get('user/{userId}/details', 'Api\User\UserController@get');
