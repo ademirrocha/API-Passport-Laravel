@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::POST('register', 'Api\User\UserController@store');
-Route::POST('login', 'Api\Auth\AuthController@login');
+Route::POST('login', 'Api\User\UserController@login');
 Route::get('users', 'Api\User\UserController@getAll');
 
 Route::middleware('auth:api')->group(function () {

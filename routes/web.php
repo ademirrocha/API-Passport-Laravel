@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/validate/video', 'Controller@video');
+
 Route::get('/', function () {
     return view('welcome');
 });
