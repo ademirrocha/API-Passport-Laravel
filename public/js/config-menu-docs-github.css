@@ -1,0 +1,9 @@
+#user-content-menu_docs ul{margin:0;padding:0;list-style:none;width:200px;}'+
+'#user-content-menu_docs ul li{position:relative;}#user-content-menu_docs li ul[name="user-content-sub-menu"]{position:absolute;left:-201px;top:0;display:none;}'+
+'#user-content-menu_docs li ul[name="user-content-sub-menu2"]{position:absolute;left:-402px;top:0;display:none;}'+
+'#user-content-menu_docs ul li a{display:block;text-decoration:none;color:#E2144A;background:#fff;'+
+'padding:5px;border:1px solid #ccc;}'+
+'*html ul li{float:left;}*html ul li a{height:1%;}'+
+'#user-content-menu_docs li:hover ul { display: block; }'+
+'#user-content-menu_docs ul li a:hover{text-decoration:underline;font-weight: bold;'+
+'background: #ccc; }

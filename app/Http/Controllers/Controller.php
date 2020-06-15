@@ -15,6 +15,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
+
   public function url_exists($url) {
 
     $ch = curl_init($url);
@@ -43,10 +44,26 @@ public function YoutubeID($url)
     return $url;
 }
 
+	public function validateHost($url){
+		$link = parse_url($url); 
+		$host = $link['host'];
+		if(
+			$host == "vimeo.com" || 
+			$host == "www.youtube.com" || 
+			$host == "youtube.com" 
+		){
+			return true;
+		}
+
+		return false;
+	}
+
     public function video(Request $request){
 
 
 		$url = $request->video;
+
+		$this->validateHost($url);
 
 		$id_video = $this->YoutubeID($url);
 
